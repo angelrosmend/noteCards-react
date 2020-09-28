@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
-import { NoteContext } from '../contexts/NoteContext';
-import Card from './Card'
-
+import { NoteContext } from '../../../contexts/NoteContext';
+import Card from '../card/Card.jsx'
+import './CardsContainer.css'
 
 function CardsContainer(){
     const { notes } = useContext(NoteContext)

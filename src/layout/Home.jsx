@@ -1,6 +1,7 @@
 import React from 'react'
-import CardsContainer from '../components/CardsContainer'
-import NewNote from '../components/NewNote'
+import CardsContainer from '../components/cards/cards-container/CardsContainer.jsx'
+import NewNote from '../components/cards/add-card/NewNote'
+import Navbar from '../components/navbar/Navbar.jsx'
 
 
 function Home() {
@@ -8,7 +9,6 @@ function Home() {
         <div className="home">
             <NewNote/>
             <CardsContainer/>
-
         </div>
     )
 }
