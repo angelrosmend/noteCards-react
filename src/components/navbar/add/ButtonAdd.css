@@ -1,0 +1,12 @@
+.add{
+ border-radius: 50%;
+ background: transparent;
+ padding: 0.5rem;
+ margin-left: 0.5rem;
+ transition: ease-in 0.4s all;
+ cursor: pointer;
+}
+
+.add:hover{
+ background: rgb(133, 130, 130);
+}

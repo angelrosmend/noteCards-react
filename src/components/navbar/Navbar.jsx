@@ -1,12 +1,13 @@
 import React from 'react'
 import './Navbar.css'
+import ButtonAdd from './add/ButtonAdd'
 
 function Navbar() {
  return (
   <nav>
    <div className='logo'>
      <h1>Add card note</h1>
-     <span className="add"><i className="fas fa-plus"></i></span>
+     <ButtonAdd/>
    </div>
    <div className='search'> 
    <input type="search" placeholder='search'/>
