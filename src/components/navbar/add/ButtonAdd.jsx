@@ -1,9 +1,10 @@
 import React,{useRef} from 'react'
 import './ButtonAdd.css'
+import { formRef } from '../../../layout/Home'
+
+
 
 function ButtonAdd() {
-
- const formRef = useRef()
 
  const openFormHandler = () => {
   formRef.current.openForm()

@@ -5,10 +5,13 @@ import Navbar from '../components/navbar/Navbar.jsx'
 import AddNoteForm from './addNoteForm/AddNoteForm.jsx'
 
 
+export const formRef = React.useRef()
+
+
 function Home() {
     return (
         <div className="home">
-            <AddNoteForm/>
+            <AddNoteForm ref={formRef}/>
             <NewNote/>
             <CardsContainer/>
         </div>
