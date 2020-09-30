@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
-import { NoteContext } from '../contexts/NoteContext';
-import Card from './Card'
+import { NoteContext } from '../../../contexts/NoteContext';
+import Card from '../card/Card'
 
 
 function CardsContainer(){
@@ -9,7 +9,6 @@ function CardsContainer(){
     return(
         <div className="cards-container">
             {notes.length ? (
-        
                     <ul className="cards-list">
                         {notes.map(note => {
                             return (<Card note={note} key={note.id}/>)

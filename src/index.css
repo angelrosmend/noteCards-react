@@ -15,8 +15,10 @@ form{
   border: 1px solid black;
 }
 .cards-list{
-  display: flex;
-  flex-direction: row;
+ display: grid;
+ grid-template-columns: repeat(4, minmax(15rem, 1fr));
+ grid-gap: 2rem;
+ padding: 3rem;
   height:100%;
 
 }
