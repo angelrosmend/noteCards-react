@@ -1,0 +1,17 @@
+.cards-container{
+ width: 100%;
+ display: flex;
+ background: var(--grdBlack);
+}
+.cards-list{
+ display: grid;
+ grid-template-columns: repeat(4, minmax(15rem, 1fr));
+ grid-gap: 2rem;
+ padding: 3rem;
+}
+
+
+
+.empty{
+ color: white;
+}

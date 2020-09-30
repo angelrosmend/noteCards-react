@@ -1,0 +1,28 @@
+.card{
+ position: relative;
+  list-style: none;
+  overflow-wrap: break-word;
+  width: 15rem;
+  height: 15rem;
+  padding: 1.3rem;
+  background: rgb(224, 211, 23);
+  box-shadow: 0 0.7rem 1.2rem 0 rgb(5, 5, 5);
+}
+
+.card h2{
+ max-height: inherit;
+ max-width: inherit;
+ font-family: 'Yesteryear', cursive;
+ font-weight: bold;
+ text-align: center;
+}
+
+.delete{
+ margin: 0.4rem ;
+ cursor: pointer;
+ display: flex;
+ justify-content: flex-end;
+ position: absolute;
+ top:0;
+ right: 0;
+}
