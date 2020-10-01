@@ -1,15 +1,11 @@
 import React,{useRef} from 'react'
+import { useContext } from 'react'
+import ModalContext from '../../../contexts/ModalContext'
 import './ButtonAdd.css'
-import { formRef } from '../../../layout/Home'
-
 
 
 function ButtonAdd() {
-
- const openFormHandler = () => {
-  formRef.current.openForm()
- }
-
+   const{openFormHandler} = useContext(ModalContext)
  return (
   <span onClick={openFormHandler} className="add"><i className="fas fa-plus"></i></span>
  )

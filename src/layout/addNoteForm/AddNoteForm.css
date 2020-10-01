@@ -10,20 +10,64 @@
  bottom: 0;
  left: 0;
  right:0;
- z-index: 100;
- background: rgba(0, 0, 0, 0.3);
+
 }
 
-.modal-box{
+.form-backdrop{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: rgba(29, 29, 29, 0.65);
+}
+.form-box{
+ display: flex;
  position: relative;
  top: 50%;
  left: 50%;
  transform: translate(-50%, -50%);
  overflow-y: auto;
- min-height: 50%;
- width: 40%;
+ height: 30rem;
+ width: 30rem;
  padding: 1.5rem;
- background: white;
+ background: rgb(224, 211, 23);
  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
  z-index: 101;
+}
+
+.input-title{
+    border: none;
+    width: 100%;
+    height: 7vh;
+    background: rgba(255, 255, 255, 0.151);
+    margin: auto;
+}
+
+textarea{
+    width: 100%;
+    height: 17rem;
+    background: rgba(255, 255, 255, 0.151);
+    border: none;
+    margin-top: 2rem;
+}
+.delete{
+    margin: 0.4rem ;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top:0;
+    right: 0;
+   }
+
+.submit-form{
+    border: none;
+    margin: auto;
+    background: transparent;
+    margin-top: 2rem;
+    margin-left: 11rem;
+    cursor: pointer;
+    font-size: 1rem;
 }

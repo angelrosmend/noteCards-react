@@ -1,5 +1,6 @@
 .cards-container{
  width: 100%;
+ min-height: 100vh;
  display: flex;
  background: var(--grdBlack);
 }
@@ -11,7 +12,8 @@
 }
 
 
-
 .empty{
  color: white;
+ font-size: 2rem;
+ margin: auto;
 }

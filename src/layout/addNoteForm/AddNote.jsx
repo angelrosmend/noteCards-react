@@ -1,7 +1,9 @@
 import React,{useState, forwardRef, useImperativeHandle} from 'react';
 import ReactDOM from 'react-dom'
+import './AddNoteForm.css'
+import NoteForm from './NoteForm';
 
-const AddNoteForm = forwardRef((props, ref) => {
+const AddNote = forwardRef((props, ref) => {
   
   const [display, setDisplay] = useState(false);
 
@@ -22,9 +24,12 @@ const AddNoteForm = forwardRef((props, ref) => {
  if(display){
   return ReactDOM.createPortal(
    <div className="form-wrapper">
-    <div onClick={close} className="form-backdrop">
+    <div className="form-backdrop">
      <div className="form-box">
-      {props.children}
+     <span onClick={close} className="delete">
+        <i className="fas fa-trash-alt"></i>
+      </span>
+       <NoteForm/>
      </div>
     </div>
    </div>
@@ -37,4 +42,4 @@ const AddNoteForm = forwardRef((props, ref) => {
 ) 
  
 
-export default AddNoteForm
+export default AddNote

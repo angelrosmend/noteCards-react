@@ -6,6 +6,7 @@ export const NoteContext = createContext();
 export const generateRandomId = () => Math.floor(Math.random() * 1000000)
 
 const NoteContextProvider = (props) => {
+  
   const [notes, dispatch] = useReducer(noteReducer, [], () => {
     const localData = localStorage.getItem('notes');
     return localData ? JSON.parse(localData) : []
@@ -13,6 +14,8 @@ const NoteContextProvider = (props) => {
   useEffect(()=> {
     localStorage.setItem('notes', JSON.stringify(notes))
   }, [notes])
+
+  //Modals
   return (
     <NoteContext.Provider value={{ notes,dispatch }}>
       {props.children}
