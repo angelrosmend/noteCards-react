@@ -1,8 +1,8 @@
 import React,{useContext, useState} from 'react'
-import ModalContext from '../../contexts/ModalContext.js'
-import {NoteContext} from '../../contexts/NoteContext.js'
+import ModalContext from '../../../contexts/ModalContext.js'
+import {NoteContext} from '../../../contexts/NoteContext.js'
 
-function NoteForm(props) {
+function NewNote() {
     const {closeFormHandler} = useContext(ModalContext)
     const { dispatch } = useContext(NoteContext)
     const [title, setTitle] = useState('')
@@ -36,4 +36,4 @@ function NoteForm(props) {
     )
 }
 
-export default NoteForm
+export default NewNote

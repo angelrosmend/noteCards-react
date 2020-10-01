@@ -26,15 +26,19 @@ nav{
 }
 
 .search{
- background: white;
- border-radius: 10px;
- padding: 0.5rem;
+    border-radius: 10px;
+    background: var(--mainBlack)
 }
 .search input{
  border: none;
+ padding: 0.5rem;
+ background: transparent;
+ color: white;
+
 }
 .search i{
- color: black;
+ color: white;
+ margin-right: 1rem;
 }
 
 

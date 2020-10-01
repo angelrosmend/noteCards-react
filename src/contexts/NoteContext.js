@@ -2,8 +2,7 @@ import React, { createContext, useReducer, useEffect} from 'react';
 import {noteReducer} from '../reducers/noteReducer'
 
 export const NoteContext = createContext();
-
-export const generateRandomId = () => Math.floor(Math.random() * 1000000)
+ 
 
 const NoteContextProvider = (props) => {
   
@@ -15,9 +14,8 @@ const NoteContextProvider = (props) => {
     localStorage.setItem('notes', JSON.stringify(notes))
   }, [notes])
 
-  //Modals
   return (
-    <NoteContext.Provider value={{ notes,dispatch }}>
+    <NoteContext.Provider value={{ notes, dispatch }}>
       {props.children}
     </NoteContext.Provider>
   );

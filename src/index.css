@@ -7,6 +7,7 @@
 :root{
   --grdWhite: linear-gradient(45deg, rgb(201, 201, 201) 35%, rgb(238, 238, 238));
   --grdBlack: linear-gradient(45deg, rgb(14, 15, 14)35%, rgb(34, 29, 29), rgb(58, 59, 58));
+  --mainBlack: rgb(14, 15, 14)
 }
 .home{
   display: flex;

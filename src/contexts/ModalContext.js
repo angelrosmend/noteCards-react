@@ -1,21 +1,31 @@
-import React from 'react'
+import React,{useImperativeHandle, useState, useRef} from 'react'
 
 const ModalContext = React.createContext()
 
 export const ModalContextProvider = (props) => {
 
-    const formRef = React.useRef();
+    const [display, setDisplay] = useState(false);   
+    const open = () =>  setDisplay(true)
+    const close = () => setDisplay(false)
+
+    const portalRef = useRef();
+    useImperativeHandle(portalRef, () => {
+        return {
+          openPortal: () => open(),
+          closePortal: () => close()
+        }
+      })
 
     const openFormHandler = () => {
-      formRef.current.openForm()
+      portalRef.current.openPortal()
     };
 
     const closeFormHandler = () => {
-        formRef.current.closeForm()
+        portalRef.current.closePortal()
     }
 
     return(
-        <ModalContext.Provider value={{openFormHandler, closeFormHandler, formRef}}>
+        <ModalContext.Provider value={{display,openFormHandler, closeFormHandler, portalRef}}>
             {props.children}
         </ModalContext.Provider>
     )
