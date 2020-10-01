@@ -4,7 +4,6 @@ import ButtonAdd from './add/ButtonAdd'
 
 
 
-
 function Navbar() {
  return (
   <nav>

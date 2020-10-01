@@ -21,6 +21,7 @@ const AddNote = forwardRef((props, ref) => {
  const close = () => {
   setDisplay(false)
  }
+
  if(display){
   return ReactDOM.createPortal(
    <div className="form-wrapper">
@@ -29,7 +30,7 @@ const AddNote = forwardRef((props, ref) => {
      <span onClick={close} className="delete">
         <i className="fas fa-trash-alt"></i>
       </span>
-       <NoteForm/>
+       <NoteForm props={close}/>
      </div>
     </div>
    </div>

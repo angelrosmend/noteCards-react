@@ -11,8 +11,9 @@
 
 .card h2{
  max-height: inherit;
+ font-size: 2rem;
  max-width: inherit;
- font-family: 'Yesteryear', cursive;
+ font-family: 'Nanum Pen Script', cursive;
  font-weight: bold;
  text-align: center;
 }

@@ -10,7 +10,6 @@ export const noteReducer = (state, action) => {
         }]
         case 'REMOVE_NOTE':
             return state.filter(note => note.id !== action.id)
-    
         default:
           return state
     }

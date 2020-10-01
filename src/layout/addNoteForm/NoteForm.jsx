@@ -2,8 +2,8 @@ import React,{useContext, useState} from 'react'
 import ModalContext from '../../contexts/ModalContext.js'
 import {NoteContext} from '../../contexts/NoteContext.js'
 
-function NoteForm() {
-    const {close} = useContext(ModalContext)
+function NoteForm(props) {
+    const {closeFormHandler} = useContext(ModalContext)
     const { dispatch } = useContext(NoteContext)
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
@@ -14,7 +14,8 @@ function NoteForm() {
         }});
         setTitle('')
         setDescription('')
-        e.preventDefault();
+        closeFormHandler()
+        e.preventDefault()
     }
 
     return (

@@ -10,8 +10,12 @@ export const ModalContextProvider = (props) => {
       formRef.current.openForm()
     };
 
+    const closeFormHandler = () => {
+        formRef.current.closeForm()
+    }
+
     return(
-        <ModalContext.Provider value={{openFormHandler, formRef}}>
+        <ModalContext.Provider value={{openFormHandler, closeFormHandler, formRef}}>
             {props.children}
         </ModalContext.Provider>
     )
