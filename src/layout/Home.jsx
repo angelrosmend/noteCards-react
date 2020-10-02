@@ -1,20 +1,21 @@
-import React,{useContext, useRef} from 'react'
+import React from 'react'
 import CardsContainer from '../components/cards/cards-container/CardsContainer.jsx'
-import NewNote from '../components/cards/add-card/NewNote'
 import Navbar from '../components/navbar/Navbar.jsx'
-import AddNote from './modal/Portal.jsx'
-import ModalContext from '../contexts/ModalContext.js'
-import NoteForm from './modal/portals/NewNote.jsx'
+import Portal from './modal/Portal.jsx'
+import NewNote from './modal/portals/NewNote.jsx'
+import {Switch, Route} from 'react-router-dom'
+import NoteDetails from './modal/portals/NoteDetails.jsx'
 
 
 function Home() {
-  const{formRef} = useContext(ModalContext)
     return (
         <div className="home">
-            <AddNote ref={formRef}>
-              <NoteForm/>
-            </AddNote>
+            <Navbar/>
             <CardsContainer/>
+            <Portal>
+                <Route path="/add" component={NewNote}/>
+                <Route path="/details/:id" component={NoteDetails}></Route>
+            </Portal>
         </div>
     )
 }

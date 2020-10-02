@@ -79,3 +79,41 @@ textarea::placeholder, .input-title::placeholder{
     font-size: 1.5rem;
     color: rgba(12, 12, 12, 0.247);
 }
+
+
+/*DETAILS*/
+
+.details-wrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    width: 100%;
+    height: 100%;
+}
+.details-wrapper h2{
+    font-weight: bolder;
+    font-size: 2.5rem;
+    text-align: center;
+    font-family: 'Nanum Pen Script', cursive;
+
+}
+
+.details-wrapper p{
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Nanum Pen Script', cursive;
+    font-weight: lighter;
+}
+
+.edit{
+    margin: 0.4rem ;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    position: absolute;
+    top:0;
+    left: 0;
+   }
+
+

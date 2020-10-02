@@ -1,10 +1,10 @@
-import React,{useState, forwardRef, useImperativeHandle} from 'react';
+import React,{forwardRef} from 'react';
 import { useContext } from 'react';
 import ReactDOM from 'react-dom'
 import ModalContext from '../../contexts/ModalContext';
 import './portals.css'
 
-const Portal = forwardRef((props, ref) => {
+const Portal = forwardRef((props) => {
 
  const {display, closeFormHandler} = useContext(ModalContext)
 
@@ -13,8 +13,9 @@ const Portal = forwardRef((props, ref) => {
    <div className="form-wrapper">
     <div className="form-backdrop">
      <div className="form-box">
-     <span onClick={closeFormHandler} className="delete">
-        <i className="fas fa-trash-alt"></i>
+     <span onClick={closeFormHandler} 
+           className="delete">
+        <i className="fas fa-times"></i>
       </span>
       {props.children}
      </div>
