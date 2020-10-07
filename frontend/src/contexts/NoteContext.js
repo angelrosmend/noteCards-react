@@ -1,24 +1,36 @@
 import React, { createContext, useReducer, useEffect} from 'react';
-import {noteReducer} from '../reducers/noteReducer'
-
+import {initialState, noteReducer} from '../reducers/noteReducer'
+import axios from 'axios'
 export const NoteContext = createContext();
  
 
+
 const NoteContextProvider = (props) => {
-  
-  const [notes, dispatch] = useReducer(noteReducer, [], () => {
-    const localData = localStorage.getItem('notes');
-    return localData ? JSON.parse(localData) : []
-  });
+
+  const [state, dispatch] = useReducer(noteReducer, initialState);
+
   useEffect(()=> {
-    localStorage.setItem('notes', JSON.stringify(notes))
-  }, [notes])
+    getNotes()
+  }, [])
+
+
+  function getNotes(){
+    axios.get('http://localhost:4000/api/notes')
+    .then(response => {
+      dispatch({type: 'GET_NOTES', payload: response.data})
+    })
+    .catch(error => {
+      dispatch({type: 'SET_ERROR'})
+    })
+  }
+
 
   return (
-    <NoteContext.Provider value={{ notes, dispatch }}>
+    <NoteContext.Provider value={{ state, dispatch }}>
       {props.children}
     </NoteContext.Provider>
   );
 }
+ 
  
 export default NoteContextProvider;

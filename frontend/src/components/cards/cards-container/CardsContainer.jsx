@@ -4,26 +4,30 @@ import Card from '../card/Card.jsx'
 import './CardsContainer.css'
 
 function CardsContainer(){
-    const { notes } = useContext(NoteContext)
+    const { state } = useContext(NoteContext)
+    const { notes, loading, error} = state
+    console.log(notes)
 
-    return(
+
+    if(loading){
+        return(
+            <div className="loading">
+                <h1>Loading...</h1>
+            </div>
+        )
+      }else if(error) return <div className="error"><h1>{error}</h1></div>
+    
+      return(
         <div className="cards-container">
-            {notes.length ? (
-        
-                    <ul className="cards-list">
-                        {notes.map(note => {
-                            return (<Card note={note} key={note.id}/>)
-                        })}
-                    </ul>
-            ):(
-                <div className="empty">
-                    <h1>Add a note!</h1>
-                </div>
-            )}
-
+            <ul className="cards-list">
+                {notes.map(note => {
+                    return (<Card note={note} key={note._id}/>)
+                })}
+            </ul>
         </div>
-    )
+)
 }
+
 
 
 

@@ -3,7 +3,7 @@ import CardsContainer from '../components/cards/cards-container/CardsContainer.j
 import Navbar from '../components/navbar/Navbar.jsx'
 import Portal from './modal/Portal.jsx'
 import NewNote from './modal/portals/NewNote.jsx'
-import {Switch, Route} from 'react-router-dom'
+import {Route} from 'react-router-dom'
 import NoteDetails from './modal/portals/NoteDetails.jsx'
 
 

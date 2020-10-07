@@ -1,10 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { NoteContext } from '../../../contexts/NoteContext'
+import React from 'react'
+
 
 function NoteDetails({match}) {
-
-   const id = match.params.id
-   const [note, setNote ]= useState({})
 
 
 

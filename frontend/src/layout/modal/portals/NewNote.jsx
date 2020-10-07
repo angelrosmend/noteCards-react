@@ -1,6 +1,7 @@
 import React,{useContext, useState} from 'react'
 import ModalContext from '../../../contexts/ModalContext.js'
 import {NoteContext} from '../../../contexts/NoteContext.js'
+import axios from 'axios'
 
 function NewNote() {
     const {closeFormHandler} = useContext(ModalContext)
@@ -8,20 +9,22 @@ function NewNote() {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
 
-    const handleSubmit = (e) => {
-        dispatch({type: 'ADD_NOTE', note: {
-            title, description
-        }});
+    const handleSubmit = async (e) => {
+        const note = {title, description}
+        e.preventDefault()
+        dispatch({type: 'ADD_NOTE', note});
+        const res = await axios.post('http://localhost:4000/api/notes', note)
+        console.log(res)
         setTitle('')
         setDescription('')
-        closeFormHandler()
-        e.preventDefault()
     }
 
     return (
         <form onSubmit={handleSubmit}>
-        <input className="input-title"
-               type="text" 
+        <input required
+               className="input-title"
+               type="text"
+               name="title" 
                placeholder="Title"
                value={title}
                onChange={(e) => setTitle(e.target.value)}/>

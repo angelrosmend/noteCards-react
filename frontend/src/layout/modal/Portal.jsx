@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import ModalContext from '../../contexts/ModalContext';
 import './portals.css'
 
-const Portal = forwardRef((props) => {
+const Portal = forwardRef((props, ref) => {
 
  const {display, closeFormHandler} = useContext(ModalContext)
 

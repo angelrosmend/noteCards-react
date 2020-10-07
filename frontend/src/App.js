@@ -1,4 +1,4 @@
-import React,{useRef} from 'react';
+import React from 'react';
 import Home from './layout/Home';
 import NoteContextProvider from './contexts/NoteContext'
 import { ModalContextProvider } from './contexts/ModalContext';
